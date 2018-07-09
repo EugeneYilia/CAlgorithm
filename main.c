@@ -1,14 +1,17 @@
 #include <stdio.h>
 
 int main() {//升序排序
-    int numbers[10];
-    printf("请输入十个数字\n");
-    for (int i = 0; i < 10; i++) {
+    printf("请输入想要的数组的大小\n");
+    int size;
+    scanf("%d", &size);
+    int numbers[size];
+    printf("请输入%d个数字\n", size);
+    for (int i = 0; i < size; i++) {
         scanf("%d", &numbers[i]);
     }
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < size; i++) {
         int minimalIndex = i;
-        for (int j = i + 1; j < 10; j++) {
+        for (int j = i + 1; j < size; j++) {
             if (numbers[minimalIndex] > numbers[j]) {
                 minimalIndex = j;
             }
@@ -20,7 +23,7 @@ int main() {//升序排序
         }
     }
 
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < size; i++) {
         printf("%d\n", numbers[i]);
     }
     return 0;
